@@ -1,8 +1,22 @@
 import { useGraphStore } from "@antv/xflow";
 import { useEffect, useCallback } from "react";
+import { register } from "@antv/x6-react-shape";
+// import imgsrc from "./hh.png";
+
+const NodeComponent = () => {
+  // return <img style={{ width: "100%", height: "100%" }} alt="" src={imgsrc} />;
+  return <div style={{ width: "100%", height: "100%" }}>Hello World</div>;
+};
 
 export const InitNode = () => {
   const initData = useGraphStore((state) => state.initData);
+
+  register({
+    shape: "custom-basic-react-node",
+    width: 100,
+    height: 100,
+    component: NodeComponent,
+  });
 
   const setInitData = useCallback(() => {
     initData({
@@ -56,6 +70,12 @@ export const InitNode = () => {
               ry: 6,
             },
           },
+        },
+        {
+          id: "4",
+          shape: "custom-basic-react-node",
+          x: 60,
+          y: 100,
         },
       ],
       edges: [
