@@ -1,23 +1,22 @@
-import {
-  XFlow,
-  XFlowGraph,
-  Grid,
-  Background,
-  Snapline,
-  Transform,
-} from "@antv/xflow";
+import { XFlow, XFlowGraph, Grid, Background, Snapline } from "@antv/xflow";
 import React from "react";
 import { InitNode } from "./InitNode";
+import { Toolbar } from "./Toolbar";
 import "./index.css";
 
 const Page = () => {
-  console.log(111)
   return (
     <div className="xflow-guide">
       <XFlow>
+        <Toolbar />
         <XFlowGraph
+          selectOptions={{ showNodeSelectionBox: true, rubberband: true }}
           zoomable
           pannable
+          panOptions={{
+            eventTypes: ["leftMouseDown"],
+            modifiers: ["ctrl"],
+          }}
           minScale={0.5}
           restrict
           connectionOptions={{
@@ -61,14 +60,13 @@ const Page = () => {
           connectionEdgeOptions={{
             animated: true,
             draggable: true,
-            selected: true
+            selected: true,
           }}
         />
         <Grid type="dot" />
         <Background color="#F2F7FA" />
         <Snapline sharp />
         <InitNode />
-        <Transform resizing rotating />
       </XFlow>
     </div>
   );

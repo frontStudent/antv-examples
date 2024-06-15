@@ -1,4 +1,4 @@
-import Demo from './X6/xflow-test'
+import Demo from './X6/xflow-flow'
 
 const Page = () => {
   return (

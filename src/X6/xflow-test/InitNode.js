@@ -1,4 +1,4 @@
-import { useGraphStore, useGraphInstance, useGraphEvent } from "@antv/xflow";
+import { useGraphStore,  useGraphEvent } from "@antv/xflow";
 import { useEffect, useCallback } from "react";
 import { register } from "@antv/x6-react-shape";
 // import imgsrc from "./hh.png";
@@ -19,12 +19,9 @@ export const InitNode = () => {
 
   useGraphEvent("node:click", (params) => {
     console.log("node:click", params);
-    updateNode(params.node.id, {
-      size: {
-        width: 100,
-        height: 100,
-      },
-    });
+    // updateNode(params.node.id, {
+    //   selected: true
+    // });
   });
 
   register({
@@ -119,9 +116,9 @@ export const InitNode = () => {
     setInitData();
   }, [setInitData]);
 
-  useEffect(()=>{
-    console.log(nodes,'nodes')
-  },[nodes])
+  // useEffect(()=>{
+  //   console.log(nodes,'nodes')
+  // },[nodes])
 
   return null;
 };
