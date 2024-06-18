@@ -5,6 +5,7 @@
   "dependencies": {
     "@antv/g6": "^4.8.24",
     "@antv/x6": "^2.18.1",
+    "@antv/x6-plugin-stencil": "^2.1.5",
     "@antv/x6-react-shape": "^2.2.3",
     "@antv/xflow": "^2.1.6",
     "ahooks": "^3.7.11",

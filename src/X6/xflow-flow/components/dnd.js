@@ -1,6 +1,6 @@
 import { useDnd } from "@antv/xflow";
 
-import "./index.css";
+import "../index.css";
 import React from "react";
 import { Space } from "antd";
 import { register } from "@antv/x6-react-shape";

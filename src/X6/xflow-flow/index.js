@@ -1,7 +1,7 @@
 import { XFlow, XFlowGraph, Background, Clipboard } from "@antv/xflow";
 import React from "react";
-import { Dnd } from "./dnd";
-import { Toolbar } from "./Toolbar";
+import { Dnd } from "./components/dnd";
+import { Toolbar } from "./components/Toolbar";
 import "./index.css";
 
 const Page = () => {
@@ -16,12 +16,12 @@ const Page = () => {
             selectOptions={{
               showNodeSelectionBox: true,
               showEdgeSelectionBox: true,
-              rubberband: true,
+              rubberband: true, // 是否开启框选
             }}
             pannable
             panOptions={{
               eventTypes: ["leftMouseDown"],
-              modifiers: ["ctrl"],
+              modifiers: ["ctrl"], // 配合ctrl键来拖拽画布，避免与框选操作冲突
             }}
             connectionOptions={{
               allowNode: false,
